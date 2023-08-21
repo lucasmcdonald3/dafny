@@ -131,7 +131,7 @@ class Seq(tuple):
 
     def VerbatimString(self, asliteral):
         if asliteral:
-            return f"\"{''.join(map(lambda c: c.__escaped__(), self))}\""
+            return f"\"{''.join(map(lambda c: CodePoint(c).__escaped__(), self))}\""
         else:
             return ''.join(self)
 
